@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import math
 import time
 def calc(x):
@@ -16,7 +10,6 @@ from selenium import webdriver
 try:
     
     browser = webdriver.Chrome()
-    
     browser.get("http://suninjuly.github.io/explicit_wait2.html")
     
     p = WebDriverWait(browser, 20).until(EC.text_to_be_present_in_element((By.ID, "price"), "$100"))
@@ -31,8 +24,6 @@ try:
     button2 = browser.find_element_by_css_selector("#solve").click()
     
 finally:    
-    # успеваем скопировать код за 30 секунд
     time.sleep(30)
-    # закрываем браузер после всех манипуляций
     browser.quit()
 
