@@ -8,7 +8,7 @@ import unittest
 from selenium import webdriver
 import time
 class TestAbs(unittest.TestCase):
-    def test_1(self):
+    def test_abs1(self):
         try: 
             link = "http://suninjuly.github.io/registration1.html"
             browser = webdriver.Chrome()
@@ -27,14 +27,15 @@ class TestAbs(unittest.TestCase):
 
             welcome_text_elt = browser.find_element_by_tag_name("h1")
             welcome_text = welcome_text_elt.text
+            a = "Congratulations! You have successfully registered!"
 
-            assertEqual "Congratulations! You have successfully registered!" == welcome_text
+            self.assertEqual(a, welcome_text)
 
         finally:
             time.sleep(10)
             browser.quit()
         
-    def test_2(self):
+    def test_abs2(self):
         try: 
             link = "http://suninjuly.github.io/registration2.html"
             browser = webdriver.Chrome()
@@ -54,7 +55,7 @@ class TestAbs(unittest.TestCase):
             welcome_text_elt = browser.find_element_by_tag_name("h1")
             welcome_text = welcome_text_elt.text
 
-            assertEqual "Congratulations! You have successfully registered!" == welcome_text
+            self.assertEqual("Congratulations! You have successfully registered!", welcome_text)
 
         finally:
             time.sleep(10)
